@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../../../core/recipes.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Recipe } from '../../../shared/recipe.model';
 
 @Component({
@@ -10,18 +10,16 @@ import { Recipe } from '../../../shared/recipe.model';
 })
 export class ListRecipesComponent implements OnInit {
 
-  recipes: any;
-  recipes$: Observable<Recipe>[];
+  recipes: Recipe[];
+  recipes$: Subject<Recipe[]>;
   constructor(private recipesService: RecipesService) {
 
   }
 
   ngOnInit() {
-    // this.recipesService.recipes$.values().;
-
-    /*this.recipesService.getRecipes().subscribe( (data) => {
+    this.recipesService.recipes$.subscribe((data) => {
       this.recipes = data;
-    });*/
+    });
   }
 
 }
