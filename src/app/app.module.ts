@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { bounce } from 'ng-animate';
 
 @NgModule({
   declarations: [

@@ -7,6 +7,7 @@ import { MatCardModule, MatInputModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardDirective } from '../shared/card.directive';
 import { SharedModule } from '../shared/shared.module';
+import { animate } from '@angular/animations';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     MatCardModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [ListRecipesComponent, SearchComponent],
   declarations: [ListRecipesComponent, RecipeComponent, SearchComponent]
